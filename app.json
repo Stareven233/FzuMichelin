@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#fc6c3c",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/img/shouye.png",
+        "selectedIconPath": "static/img/shouye_selected.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "个人",
+        "iconPath": "static/img/geren.png",
+        "selectedIconPath": "static/img/geren_selected.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fc6c3c",
+    "navigationBarTitleText": "福大米其林",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
