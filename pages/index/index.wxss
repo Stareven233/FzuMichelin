@@ -1,21 +1,25 @@
 /**index.wxss**/
-.userinfo {
+view.container searchBox {
+  width: 100%;
+}
+view.container view.taste_wrap {
+  margin-top: 60rpx;
+  width: 100%;
+}
+view.container view.taste_wrap view.taste_buttons {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+view.container view.taste_wrap view.taste_buttons button.taste {
+  margin: 20rpx 40rpx;
+  padding: 0;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  border-color: #fff;
+  border-radius: 50rpx;
+  color: #ffeeee;
+  background-color: orange;
 }

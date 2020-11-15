@@ -1,1 +1,66 @@
 /* pages/user/index.wxss */
+.user_info_wrap {
+  height: 35vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_backgroud {
+  height: 40vh;
+  width: 100%;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: #fff;
+  margin-top: 40rpx;
+}
+.user_info_wrap .user_login_btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid orange;
+  color: orange;
+  font-size: 38rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.user_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 60rpx auto;
+}
+.user_main .menu_item {
+  padding: 20rpx 0;
+  height: 40rpx;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+}
+.user_main .menu_item .feedback_btn {
+  padding: inherit;
+  height: inherit;
+  font-weight: inherit;
+  border: inherit;
+  width: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: inherit;
+}

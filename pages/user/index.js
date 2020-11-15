@@ -1,66 +1,30 @@
 // pages/user/index.js
+
+import { request } from '../../utils/util'
+import { login } from '../../utils/asyncWx'
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    userInfo: {},
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad() {
+    const userInfo = wx.getStorageSync('userInfo') || {}
+    this.setData({userInfo})
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  handleGetUserInfo: async function (e) {
+    // 登录
+    const { code } = await login()
+    console.log(code)
+    
+    // {errMsg: "login:ok", code: "053Xj20w3AOGjV23Zq2w3d67w74Xj20A"}
+    const { userInfo } = e.detail
 
+    let res = await request({ url: '/getOpenid', method: 'POST', data: { code, nickname: userInfo.nickName } })
+    console.log(res)
+
+    wx.setStorageSync('userInfo', userInfo)
+    this.setData({userInfo})
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
