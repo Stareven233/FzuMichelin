@@ -1,5 +1,6 @@
 <view class="search_input">
-  <navigator url="/pages/search/index" open-type="navigate">
-    搜索
-  </navigator>
+  <view class="input_wrap">
+    <text class="iconfont icon-sousuo"></text>
+    <input type="text" placeholder="排骨面" confirm-type="search" bindconfirm="handleInputConfirm"></input>
+  </view>
 </view>

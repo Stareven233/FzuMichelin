@@ -1,0 +1,22 @@
+<!--pages/search/index.wxml-->
+<searchBox></searchBox>
+
+<view class="menu_wrap">
+  <view class="menu_header">
+    <text class="iconfont icon-shoucang"></text>
+    <text>历史搜索</text>
+  </view>
+  <view class="menu_list">
+    <view class="menu_item" wx:for="{{histories}}" wx:key="*this">{{item}}</view>
+  </view>
+</view>
+
+<view class="menu_wrap">
+  <view class="menu_header">
+    <text class="iconfont icon-shoucang1"></text>
+    <text>为您推荐</text>
+  </view>
+  <view class="menu_list">
+    <view class="menu_item" wx:for="{{recommends}}" wx:key="id">{{item.name}}</view>
+  </view>
+</view>

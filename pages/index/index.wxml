@@ -1,6 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <searchBox></searchBox>
+  <navigator url="/pages/search/index" open-type="navigate">
+    <searchBox></searchBox>
+  </navigator>
+
 
   <view class="taste_wrap">
     <view class="taste_title">口味选择</view>

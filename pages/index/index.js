@@ -100,8 +100,10 @@ Page({
       v.tastes = v.favor===null ? [] : v.favor.split(',')
       v.starNum = Math.round(v.score)
     })
+
     this.setData({
       dishes
     })
+    wx.setStorageSync('recommendDish', dishes)
   }
 })

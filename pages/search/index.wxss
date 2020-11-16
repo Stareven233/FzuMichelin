@@ -1,0 +1,35 @@
+.menu_wrap {
+  margin-top: 40rpx;
+  margin-bottom: 60rpx;
+}
+.menu_wrap .menu_header {
+  padding: 0 20rpx;
+}
+.menu_wrap .menu_header .iconfont {
+  font-size: 40rpx;
+}
+.menu_wrap .menu_header .icon-shoucang {
+  color: #f1db0f;
+}
+.menu_wrap .menu_header .icon-shoucang1 {
+  color: #ff6533;
+}
+.menu_wrap .menu_header :last-child {
+  margin-left: 10rpx;
+  font-weight: 500;
+}
+.menu_wrap .menu_list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 26rpx;
+  padding: 20rpx 40rpx;
+}
+.menu_wrap .menu_list .menu_item {
+  margin-top: 30rpx;
+  margin-right: 10rpx;
+  padding: 10rpx 24rpx;
+  background-color: #f3d9d9;
+  border-radius: 10%;
+}

@@ -1,6 +1,6 @@
 /**app.wxss**/
 
-@import './static//styles/iconfont.wxss';
+@import './static/styles/iconfont.wxss';
 
 page {
   padding: 0;

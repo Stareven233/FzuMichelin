@@ -1,15 +1,28 @@
+@import '../../static/styles/iconfont.wxss';
+/* 组件似乎不共享app.wxss中import的资源 */
+
 .search_input {
   height: 70rpx;
   padding: 10rpx;
   background-color: var(--themeColor);
+}
 
-  navigator {
+.input_wrap {
+  height: 100%;
+  color: #666666;
+  background-color: #fff;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .iconfont {
+    flex: 1;
+    padding-left: 20rpx;
+  }
+  input {
+    flex: 12;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 15rpx;
-    color: #666666;
+    padding-left: 30rpx;
   }
 }
