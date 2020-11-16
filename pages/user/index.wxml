@@ -1,7 +1,7 @@
 <!--pages/user/index.wxml-->
 
 <view class="user_info_wrap">
-  <view wx:if="{{userInfo.nickName}}" class="user_img_wrap">
+  <view wx:if="{{userInfo.uid}}" class="user_img_wrap">
     <image class="user_backgroud" src="{{userInfo.avatarUrl}}"></image>
     <view class="user_info">
       <image class="user_avatar" src="{{userInfo.avatarUrl}}"></image>
@@ -12,23 +12,24 @@
 </view>
 
 <view class="user_main">
-    <view class="address_wrap menu_item">
+    <navigator class="address_wrap menu_item">
       <text class="iconfont"></text>
-      <navigator url="/pages/collect/index">收藏菜品</navigator>
-    </view>
+      <text url="/pages/collect/index">收藏菜品</text>
+    </navigator>
 
-    <view class="liked_wrap menu_item">
+    <navigator class="liked_wrap menu_item">
       <text class="iconfont"></text>
-      <navigator>赞过</navigator>
-    </view>
+      <text>赞过</text>
+    </navigator>
 
-    <view class="feedback_wrap menu_item">
+    <navigator class="feedback_wrap menu_item">
       <text class="iconfont"></text>
-      <navigator url="/pages/history/index">历史评论</navigator>
-    </view>
+      <text url="/pages/history/index">历史评论</text>
+    </navigator>
 
-    <view class="feedback_wrap menu_item">
+    <navigator class="feedback_wrap menu_item">
       <text class="iconfont"></text>
+      <text>联系我们</text>
       <button open-type="feedback" class="feedback_btn">联系我们</button>
-    </view>
+    </navigator>
   </view>
