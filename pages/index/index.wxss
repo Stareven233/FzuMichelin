@@ -1,25 +1,88 @@
 /**index.wxss**/
-view.container searchBox {
+searchBox {
   width: 100%;
 }
-view.container view.taste_wrap {
+.taste_wrap {
   margin-top: 60rpx;
   width: 100%;
 }
-view.container view.taste_wrap view.taste_buttons {
+.taste_wrap .taste_buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-view.container view.taste_wrap view.taste_buttons button.taste {
+.taste_wrap .taste_buttons .taste_btn {
   margin: 20rpx 40rpx;
   padding: 0;
   width: 100rpx;
   height: 100rpx;
   line-height: 100rpx;
-  font-size: 30rpx;
+  font-size: 32rpx;
   border-color: #fff;
   border-radius: 50rpx;
   color: #ffeeee;
   background-color: orange;
+}
+.recommend_wrap {
+  margin: 100rpx 0;
+}
+.recommend_wrap view.recommend_lists .dish_wrap {
+  display: flex;
+  justify-content: space-around;
+  margin: 30rpx 40rpx;
+}
+.recommend_wrap view.recommend_lists .dish_wrap .dish_img_wrap {
+  flex: 3;
+  overflow: hidden;
+}
+.recommend_wrap view.recommend_lists .dish_wrap .dish_img_wrap .dish_img {
+  background-color: #55897e;
+  height: 240rpx;
+  width: 240rpx;
+  border-radius: 6%;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info .dish_name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_price_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 30rpx;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_price_row .dish_score {
+  display: flex;
+  justify-content: space-between;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_price_row .dish_score .dish_stars {
+  color: #eef90e;
+  margin-right: 10rpx;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_loc {
+  font-size: 26rpx;
+  color: #555555;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_loc text:first-child {
+  margin-right: 30rpx;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_taste_wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: start;
+}
+.recommend_wrap view.recommend_lists .dish_wrap view.dish_info view.dish_taste_wrap view.dish_taste {
+  font-size: 26rpx;
+  padding: 6rpx 14rpx;
+  margin-right: 8rpx;
+  background-color: #a7f08a;
+  border-radius: 40%;
 }

@@ -1,5 +1,7 @@
 /**app.wxss**/
 
+@import './static//styles/iconfont.wxss';
+
 page {
   padding: 0;
   margin: 0; 

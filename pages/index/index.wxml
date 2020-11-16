@@ -7,7 +7,7 @@
     <view class="taste_buttons">
       <button 
       plain
-      class="taste"
+      class="taste_btn"
       wx:for="{{tastes}}"
       wx:key="taste"
       >
@@ -23,6 +23,38 @@
       <!-- 之后可以做成按钮，跳转到个人中心去登录 -->
     </view>
     <view wx:else class="recommend_lists">
+      <view plain class="dish_wrap" wx:for="{{dishes}}" wx:key="id">
+        
+        <view class="dish_img_wrap">
+          <image class="dish_img" src="{{item.smallpic}}" mode="aspectFill"></image>
+          <!-- https://developers.weixin.qq.com/miniprogram/dev/component/image.html -->
+        </view>
+
+        <view class="dish_info">
+          <text class="dish_name">{{item.name}}</text>
+
+          <view class="dish_price_row">
+            <view class="dish_score">
+              <view class="dish_stars">
+                <!-- 下面用icon标签会导致父元素view上方留了一点空间，跟右边的评分价格无法对齐 -->
+                <text class="iconfont icon-xingxing" wx:for="{{item.starNum}}" wx:key="*this"></text>
+              </view>
+              <view>{{item.score}}分</view>
+            </view>
+            <view class="dish_price">￥{{item.price}}</view>
+          </view>
+
+          <view class="dish_loc">
+            <text>{{item.restaurantname}}</text>
+            <text>{{item.restaurantlocation}}</text>
+          </view>
+
+          <view class="dish_taste_wrap">
+            <view class="dish_taste" wx:for="{{item.tastes}}" wx:key="*this" wx:for-item="taste">{{taste}}</view>
+          </view>
+        </view>
+
+      </view>
     </view>
   </view>
 </view>

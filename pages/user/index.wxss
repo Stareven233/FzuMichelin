@@ -55,6 +55,9 @@
   border-bottom: 1px solid #cccccc;
   position: relative;
 }
+.user_main .menu_item .iconfont {
+  margin-right: 20rpx;
+}
 .user_main .menu_item .feedback_btn {
   position: absolute;
   top: 0;

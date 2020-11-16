@@ -36,6 +36,7 @@ export const request = (params) => {
   
   return new Promise((resolve, reject) => {
     wx.request({
+      timeout: 3000,
       ...params,
       url: baseUrl + params.url,
 
