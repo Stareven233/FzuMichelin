@@ -74,6 +74,13 @@
         {
           "name": "搜索",
           "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "菜品搜索",
+          "pathName": "pages/dish/index",
+          "query": "kw=烤鸭",
           "scene": null
         }
       ]

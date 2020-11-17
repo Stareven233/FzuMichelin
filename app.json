@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/index",
-    "pages/search/index"
+    "pages/search/index",
+    "pages/dish/index"
   ],
   "tabBar": {
     "color": "#999999",

@@ -84,5 +84,5 @@ searchBox {
   padding: 6rpx 14rpx;
   margin-right: 8rpx;
   background-color: #a7f08a;
-  border-radius: 40%;
+  border-radius: 30%;
 }

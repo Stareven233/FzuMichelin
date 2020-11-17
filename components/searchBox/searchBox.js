@@ -35,9 +35,9 @@ Component({
       // 最好先找找有无该kw，有的话先删再加
       histories.push(keyword)
       wx.setStorageSync('histories', histories)
-      wx.navigateTo({
-        url: '/pages/dish/index',
+      wx.redirectTo({
+        url: `/pages/dish/index?kw=${keyword}`,
       })
-  }
+    },
   }
 })

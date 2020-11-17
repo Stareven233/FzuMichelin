@@ -91,7 +91,7 @@ Page({
     const userInfo = wx.getStorageSync('userInfo')
     const data = { id: userInfo.uid,  page: 1 }
     let res = await request({ url: '/dish/recommend', method: 'POST', data })
-    let dishes = res.data
+    let dishes = res.data || []
     // let dishes = this.data.dishes
 
     // dishes[1].favor = '酸,甜,可口'

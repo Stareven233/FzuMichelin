@@ -1,0 +1,73 @@
+/* pages/dish/index.wxss */
+
+.dish_wrap {
+  display: flex;
+  justify-content: space-around;
+  margin: 30rpx 40rpx;
+
+  .dish_img_wrap {
+    flex: 3;
+    overflow: hidden;
+
+    .dish_img {
+      background-color: #55897e;
+      height: 240rpx;
+      width: 240rpx;
+      border-radius: 6%;
+    }
+  }
+
+  view.dish_info {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .dish_name {
+      font-size: 32rpx;
+      font-weight: 700;
+    }
+
+    view.dish_price_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      font-size: 30rpx;
+
+      .dish_score {
+        display: flex;
+        justify-content: space-between;
+
+        .dish_stars {
+          color: #eef90e;
+          margin-right: 10rpx;
+        }
+      }
+    }
+
+    view.dish_loc {
+      font-size: 26rpx;
+      color: #555555;
+      
+      text:first-child {
+        margin-right: 30rpx;
+      }
+    }
+
+    view.dish_taste_wrap {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: start;
+
+      view.dish_taste {
+        font-size: 26rpx;
+        padding: 6rpx 14rpx;
+        margin-right: 8rpx;
+        background-color: #a7f08a;
+        border-radius: 30%;
+      }
+    }
+  }
+}
