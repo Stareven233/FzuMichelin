@@ -7,15 +7,16 @@
 
   <view class="taste_wrap">
     <view class="taste_title">口味选择</view>
-    <view class="taste_buttons">
-      <button 
-      plain
-      class="taste_btn"
+    <view class="taste_navs">
+      <navigator
+      url="/pages/dish/index?favor={{item.taste}}"
+      open-type="redirect"
+      class="taste_nav"
       wx:for="{{tastes}}"
       wx:key="taste"
       >
       {{item.taste}}
-      </button>
+      </navigator>
     </view>
   </view>
 

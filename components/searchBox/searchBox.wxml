@@ -1,7 +1,7 @@
 <view class="search_input">
   <view class="input_wrap">
     <text class="iconfont icon-sousuo"></text>
-    <input type="text" placeholder="排骨面" confirm-type="search" bindconfirm="handleInputConfirm"></input>
+    <input type="text" placeholder="今天吃什么..." confirm-type="search" bindconfirm="handleInputConfirm"></input>
     <!-- <view class="test" bindtap="testNav">测试路由</view> -->
   </view>
 </view>
