@@ -27,7 +27,8 @@
       <!-- 之后可以做成按钮，跳转到个人中心去登录 -->
     </view>
     <view wx:else class="recommend_lists">
-      <view plain class="dish_wrap" wx:for="{{dishes}}" wx:key="id">
+      <view class="dish_wrap" wx:for="{{dishes}}" wx:key="id" bindtap="handleDishTap" data-dish-id="{{item.id}}">
+        <!-- dish_wrap抽成组件后handleDishTap可作为组件method，由传入的prop决定是否启用(详情页就不需要再跳转) -->
         
         <view class="dish_img_wrap">
           <image class="dish_img" src="{{item.smallpic}}" mode="aspectFill"></image>

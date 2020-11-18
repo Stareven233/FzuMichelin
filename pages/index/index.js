@@ -105,5 +105,14 @@ Page({
       dishes
     })
     wx.setStorageSync('recommendDish', dishes)
-  }
+  },
+
+  handleDishTap(e) {
+    // console.log(e);
+    const { dishId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/dish_detail/index?dishId=${dishId}`,
+    })
+  },
+
 })

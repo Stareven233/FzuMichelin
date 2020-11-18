@@ -82,6 +82,12 @@
           "pathName": "pages/dish/index",
           "query": "kw=烤鸭",
           "scene": null
+        },
+        {
+          "name": "菜品详情",
+          "pathName": "pages/dish_detail/index",
+          "query": "dishId=14",
+          "scene": null
         }
       ]
     }

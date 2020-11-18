@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/user/index",
     "pages/search/index",
-    "pages/dish/index"
+    "pages/dish/index",
+    "pages/dish_detail/index"
   ],
   "tabBar": {
     "color": "#999999",
