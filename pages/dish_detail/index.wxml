@@ -1,5 +1,5 @@
 <!--pages/dish_detail/index.wxml-->
-<view class="dish_wrap" wx:for="{{[dish]}}" wx:key="id">
+<view class="dish_wrap" wx:for="{{[dish]}}" wx:key="id" bindtap="commentInputblur">
   
   <view class="dish_img_wrap">
     <image class="dish_img" src="{{item.smallpic}}" mode="aspectFill"></image>
@@ -32,7 +32,26 @@
 
 </view>
 
-<view class="comment_wrap">
+<view class="comment_wrap" bindtap="commentInputblur">
+  <text class="comment_header">发表评论</text>
+  <view class="comment_editor" catchtap="commentInputFocus">
+
+    <view class="text_input">
+      <textarea type="text" class="comment_input {{commentInputFocused ? 'active' : ''}}"
+      placeholder="{{commentInputFocused ? '' : '这道菜怎么样...'}}" confirm-type="done" maxlength="1000"
+      bindfocus="commentInputFocus" bindblur=""	bindconfirm="handleCommentSend" 
+      >
+      </textarea>
+      <view class="comment_submit_btn {{commentInputFocused ? '' : 'hidden'}}">提交</view>
+    </view>
+    
+    <mp-uploader class="img_uploader {{commentInputFocused ? '' : 'hidden'}}" bindfail="uploadError"
+      bindsuccess="uploadSuccess" select="selectFile" upload="uplaodFile" files="{{files}}" max-count="1" title=""
+      tips="图片上传" delete>
+    </mp-uploader>
+
+  </view>
+
   <text class="comment_header">{{dish.commentnumber}}评论</text>
   <view class="comment_box" wx:for="{{comments}}" wx:key="commentid">
 

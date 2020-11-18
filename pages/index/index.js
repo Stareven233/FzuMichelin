@@ -90,9 +90,12 @@ Page({
   onLoad: async function() {
     const userInfo = wx.getStorageSync('userInfo')
     const data = { id: userInfo.uid,  page: 1 }
-    let res = await request({ url: '/dish/recommend', method: 'POST', data })
-    let dishes = res.data || []
-    // let dishes = this.data.dishes
+    let dishes = []
+    if(data.id) {
+      let res = await request({ url: '/dish/recommend', method: 'POST', data })
+      dishes = res.data || []
+    }
+    // let dishes = this.data.dishess
 
     // dishes[1].favor = '酸,甜,可口'
     // dishes[1].score = 3.2

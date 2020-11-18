@@ -85,6 +85,46 @@ view.comment_wrap {
     font-weight: 700;
   }
 
+  view.comment_editor {
+    margin-bottom: 60rpx;
+
+    view.text_input {
+      @comment_input_fs: 28rpx;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: @comment_input_fs;
+      margin: 20rpx 0 40rpx;
+
+      .comment_input {
+        width: 500rpx;
+        height: 1em;
+        padding: 14rpx 8rpx;
+        border: 1px solid #cccccc;
+      }
+      .comment_input.active {
+        height:  @comment_input_fs*4;
+      }
+      
+      .comment_submit_btn {
+        width:  @comment_input_fs*4;
+        height:  @comment_input_fs*4;
+        line-height:  @comment_input_fs*4;
+        text-align: center;
+        color: #ffffff;
+        background-color: #f19d63;
+        border-radius: 10%;
+      }
+      .comment_submit_btn.hidden {
+        display: none;
+      }
+    }
+  
+    .img_uploader.hidden {
+      display: none;
+    }
+  }
+
   view.comment_box {
     margin: 10rpx 30rpx 30rpx;
     
@@ -128,9 +168,10 @@ view.comment_wrap {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @comment_content_gap: 20rpx;
 
       view.comment_text {
-        margin: 20rpx 0;
+        margin-top: @comment_content_gap;
         font-size: 30rpx;
       }
 
@@ -140,14 +181,15 @@ view.comment_wrap {
         font-size: 26rpx;
         color: #555555;
         font-weight: 500;
-        margin-top: 20rpx;
+        margin-top: @comment_content_gap;
       }
 
       .comment_pic_wrap {
         overflow: hidden;
 
         .comment_pic {
-          max-height: 300rpx;
+        margin-top: @comment_content_gap;
+        max-height: 300rpx;
         }
       }
     }

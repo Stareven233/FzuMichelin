@@ -31,5 +31,8 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  },
   "sitemapLocation": "sitemap.json"
 }

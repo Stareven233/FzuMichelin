@@ -7,6 +7,8 @@
 4 接口缺少菜品详情页评论的用户头像及评论的浏览次数(浏览次数很傻吊，可以不要)
 5 接口缺少菜品详情页评论的点赞数
 6 评论大图用于图片点击放大
+7 搜索框组件的input设置value代替placeholder，value值来自推荐第一个菜品名
+8 index中onLoad抽成一个函数，在onShow判断，当logined与userInfo不符时(说明刚登录)主动加载数据
 */
 
 App({
