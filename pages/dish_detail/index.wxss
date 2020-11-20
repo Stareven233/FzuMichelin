@@ -70,25 +70,39 @@ view.comment_wrap text.comment_header {
   font-weight: 700;
 }
 view.comment_wrap view.comment_editor {
-  margin-bottom: 60rpx;
-}
-view.comment_wrap view.comment_editor view.text_input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  margin: 0 30rpx 50rpx;
   font-size: 28rpx;
-  margin: 20rpx 0 40rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #cccccc;
 }
-view.comment_wrap view.comment_editor view.text_input .comment_input {
-  width: 500rpx;
-  height: 1em;
+view.comment_wrap view.comment_editor .comment_input {
+  height: 1.2em;
+  margin-top: 20rpx;
   padding: 14rpx 8rpx;
   border: 1px solid #cccccc;
 }
-view.comment_wrap view.comment_editor view.text_input .comment_input.active {
+view.comment_wrap view.comment_editor .comment_input.active {
   height: 112rpx;
 }
-view.comment_wrap view.comment_editor view.text_input .comment_submit_btn {
+view.comment_wrap view.comment_editor .editor_hidden_wrap .img_uploader {
+  width: 140rpx;
+}
+view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont {
+  font-size: 42rpx;
+  margin-right: 10rpx;
+}
+view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.kinn {
+  color: #eef90e;
+}
+view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.hiiro {
+  color: #c4c3c3;
+}
+view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_submit_btn {
   width: 112rpx;
   height: 112rpx;
   line-height: 112rpx;
@@ -97,10 +111,7 @@ view.comment_wrap view.comment_editor view.text_input .comment_submit_btn {
   background-color: #f19d63;
   border-radius: 10%;
 }
-view.comment_wrap view.comment_editor view.text_input .comment_submit_btn.hidden {
-  display: none;
-}
-view.comment_wrap view.comment_editor .img_uploader.hidden {
+view.comment_wrap view.comment_editor .editor_hidden_wrap.hidden {
   display: none;
 }
 view.comment_wrap view.comment_box {

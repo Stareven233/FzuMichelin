@@ -116,3 +116,46 @@ export const showToast = ({ title }) => {
     })
   })
 }
+
+/**
+ *  promise 形式  compressImage，用于配合 mp-uploader 的 upload
+ * @param {object} param0 参数
+ */
+export const compressImage = (param) => {
+  return new Promise((resolve, reject) => {
+    wx.compressImage({
+      src: param.src,
+      quality: param.quality,
+      success: (res) => {
+        // wx.getImageInfo({
+        //   src: res.tempFilePath,
+        //   success: (result) => {
+        //     console.log('imgInfo', result)
+        //   },
+        //   fail: (res) => {},
+        //   complete: (res) => {},
+        // })
+        // console.log(res)
+        resolve({ urls: [res.tempFilePath] })
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })
+  })
+}
+// 错误写法：
+  // wx.compressImage({
+  //   src: files.tempFilePaths[0],
+  //   quality: 60,
+  //   success: res => {
+  //     return new Promise((resolve, reject) => {
+  //       resolve({ urls: [res.tempFilePath] })
+  //     })
+  //   },
+  //   fail: err => {
+  //     return new Promise((resolve, reject) => {
+  //       reject({ err })
+  //     })
+  //   }
+  // })

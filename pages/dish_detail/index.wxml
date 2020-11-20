@@ -33,26 +33,34 @@
 </view>
 
 <view class="comment_wrap" bindtap="commentInputblur">
-  <text class="comment_header">发表评论</text>
+  <!-- <text class="comment_header">发表评论</text> -->
+  <text class="comment_header">{{dish.commentnumber}}评论</text>
   <view class="comment_editor" catchtap="commentInputFocus">
+    <!-- emmm当时这里或许应该直接用form标签替代 -->
 
-    <view class="text_input">
-      <textarea type="text" class="comment_input {{commentInputFocused ? 'active' : ''}}"
-      placeholder="{{commentInputFocused ? '' : '这道菜怎么样...'}}" confirm-type="done" maxlength="1000"
-      bindfocus="commentInputFocus" bindblur=""	bindconfirm="handleCommentSend" 
-      >
-      </textarea>
-      <view class="comment_submit_btn {{commentInputFocused ? '' : 'hidden'}}">提交</view>
-    </view>
-    
-    <mp-uploader class="img_uploader {{commentInputFocused ? '' : 'hidden'}}" bindfail="uploadError"
-      bindsuccess="uploadSuccess" select="selectFile" upload="uplaodFile" files="{{files}}" max-count="1" title=""
-      tips="图片上传" delete>
+    <textarea type="text" bindinput="handleInputChange" class="comment_input {{commentInputFocused ? 'active' : ''}}"
+    placeholder="{{commentInputFocused ? '' : '发表对这道菜的评论'}}" confirm-type="done" maxlength="1000"
+    bindfocus="commentInputFocus" bindblur=""	bindconfirm="handleCommentSend" 
+    >
+    </textarea>
+
+    <view class="editor_hidden_wrap {{commentInputFocused ? '' : 'hidden'}}">
+    <mp-uploader class="img_uploader" bindfail="uploadError"
+      bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="1" title=""
+      tips="" delete>
     </mp-uploader>
+    
+    <view class="comment_score_bar">
+      <view class="comment_stars" bindtap="handleStarchange">
+        <text class="iconfont icon-xingxing kinn" data-staridx="{{item}}" wx:for="{{commentScore}}" wx:key="*this"></text>
+        <text class="iconfont icon-xingxing hiiro" data-staridx="{{commentScore + item}}" wx:for="{{commentFullScore - commentScore}}" wx:key="*this"></text>
+      </view>
+      <view class="comment_submit_btn" bindtap="handleCommentSubmit">发表</view>
+    </view>
+    </view>
 
   </view>
 
-  <text class="comment_header">{{dish.commentnumber}}评论</text>
   <view class="comment_box" wx:for="{{comments}}" wx:key="commentid">
 
     <view class="comment_info">
