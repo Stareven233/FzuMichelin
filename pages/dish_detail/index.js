@@ -1,7 +1,7 @@
 // pages/dish_detail/index.js
 
 import { request } from '../../utils/util'
-import { compressImage } from '../../utils/asyncWx'
+import { compressImage, showToast } from '../../utils/asyncWx'
 
 Page({
   data: {
@@ -32,10 +32,21 @@ Page({
     ],
     commentInputFocused: false,
     fileUrl: '',
+    files: [],
     commentScore: 3,
     commentFullScore: 5,
     dishUserId: {},
     commentText: '',
+  },
+
+  initCommentData() {
+    this.setData({
+      commentInputFocused: false,
+      fileUrl: '',
+      files: [],
+      commentScore: 3,
+      commentText: '',
+    })
   },
 
   onLoad: async function (options) {
@@ -53,11 +64,10 @@ Page({
     dish.starNum = Math.round(dish.score)
 
     // 请求该菜品下的评论
-    url = '/dish/getcomment'
-    data = { did: dishId }
-    // res = await request({ url, data, method: 'POST' })
-    // const comments = res.data || []
-    const comments = this.data.comments
+    url = `/dish/getcomment?did=${dishId}` 
+    // const comments = this.data.comments
+    res = await request({ url, method: 'POST' })
+    const comments = res.data || []
     comments.map(function (v) {
       v.starNum = Math.round(v.score)
     })
@@ -102,7 +112,8 @@ Page({
       score: parseFloat(this.data.commentScore),
       text: this.data.commentText,
     }
-    console.log(formData);
+    // console.log(formData)
+    // uploadfile接口要求必带文件，于是评论只能必带图片...
     wx.uploadFile({
       filePath: this.data.fileUrl,  // 要上传文件资源的路径 (本地路径)
       name: 'file',
@@ -110,9 +121,16 @@ Page({
       formData: formData,
       // header: {'content-type':'multipart/form-data;charset=UTF-8'},
       timeout: 3000,
-      success: (result) => {console.log(result);},
-      fail: (res) => {console.log(res);},
-      complete: (res) => {console.log(res);},
+      success: async (result) => {
+        console.log(result)
+        await showToast({title: '评论成功'})
+        this.initCommentData()
+      },
+      fail: async (res) => {
+        await showToast({title: '评论失败，可能是没带上图片？'})
+        console.log(res)
+      },
+      complete: (res) => {console.log(res)},
     })
   },
 
@@ -159,8 +177,10 @@ Page({
   },
 
   uploadSuccess(e) {
+    const url = e.detail.urls[0]
     this.setData({
-      fileUrl: e.detail.urls[0]
+      fileUrl: url,
+      files: [{url: url}]
     })
     console.log('upload success', e.detail)
   }

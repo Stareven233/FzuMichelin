@@ -18,8 +18,8 @@ Page({
     const { code } = await login()
     // {errMsg: "login:ok", code: "053Xj20w3AOGjV23Zq2w3d67w74Xj20A"}
     let { userInfo } = e.detail
-    console.log(e);
-    const { data } = await request({ url: '/getOpenid', method: 'POST', data: { code, nickname: userInfo.nickName } })
+    const rdata = { code, nickname: userInfo.nickName, url: userInfo.avatarUrl }
+    const { data } = await request({ url: '/getOpenid', method: 'POST', data: rdata })
     
     if(data) {
       userInfo.uid = data

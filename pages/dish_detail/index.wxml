@@ -35,10 +35,11 @@
 <view class="comment_wrap" bindtap="commentInputblur">
   <!-- <text class="comment_header">发表评论</text> -->
   <text class="comment_header">{{dish.commentnumber}}评论</text>
+  <!-- 菜品的评论数，总是会比真实返回的多一 -->
   <view class="comment_editor" catchtap="commentInputFocus">
     <!-- emmm当时这里或许应该直接用form标签替代 -->
 
-    <textarea type="text" bindinput="handleInputChange" class="comment_input {{commentInputFocused ? 'active' : ''}}"
+    <textarea type="text" value="{{commentText}}" bindinput="handleInputChange" class="comment_input {{commentInputFocused ? 'active' : ''}}"
     placeholder="{{commentInputFocused ? '' : '发表对这道菜的评论'}}" confirm-type="done" maxlength="1000"
     bindfocus="commentInputFocus" bindblur=""	bindconfirm="handleCommentSend" 
     >
@@ -81,17 +82,17 @@
 
     <view class="comment_content">
       
-      <view class="comment_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et ut iste velit quae? Perspiciatis maiores iure facilis repellendus? Est nemo debitis illo, ea id eligendi dolorum quis dolor facilis!</view>
-      <!-- <view class="comment_text">{{item.text}}</view> -->
+      <!-- <view class="comment_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et ut iste velit quae? Perspiciatis maiores iure facilis repellendus? Est nemo debitis illo, ea id eligendi dolorum quis dolor facilis!</view> -->
+      <view class="comment_text">{{item.text}}</view>
 
       <view class="comment_pic_wrap">
-        <image class="comment_pic" src="{{item.smallpic}}" mode="heightFix"></image>
+        <image class="comment_pic" src="{{item.picurl}}" mode="heightFix"></image>
       </view>
 
       <view class="comment_info2">
         <view class="comment_date">{{item.time}}</view>
         <view class="like">
-          <text class="iconfont icon-dianzan"></text>
+          <!-- <text class="iconfont icon-dianzan"></text> -->
           <text>{{likeNum}}</text>
         </view>
       </view>

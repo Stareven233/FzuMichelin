@@ -17,7 +17,7 @@
     }
   }
 
-  view.dish_info {
+  .dish_info {
     flex: 4;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
       font-weight: 700;
     }
 
-    view.dish_price_row {
+    .dish_price_row {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,7 +46,7 @@
       }
     }
 
-    view.dish_loc {
+    .dish_loc {
       font-size: 26rpx;
       color: #555555;
       
@@ -55,13 +55,13 @@
       }
     }
 
-    view.dish_taste_wrap {
+    .dish_taste_wrap {
       display: flex;
       flex-wrap: nowrap;
       justify-content: flex-start;
       align-items: start;
 
-      view.dish_taste {
+      .dish_taste {
         font-size: 26rpx;
         padding: 6rpx 14rpx;
         margin-right: 8rpx;
@@ -72,7 +72,7 @@
   }
 }
 
-view.comment_wrap {
+.comment_wrap {
   display: flex;
   justify-content: space-around;
   margin: 30rpx 40rpx;
@@ -85,7 +85,7 @@ view.comment_wrap {
     font-weight: 700;
   }
 
-  view.comment_editor {
+  .comment_editor {
     margin: 0 30rpx 50rpx;
     @comment_input_fs: 28rpx;
     font-size: @comment_input_fs;
@@ -143,15 +143,17 @@ view.comment_wrap {
     }
   }
 
-  view.comment_box {
+  .comment_box {
     margin: 10rpx 30rpx 30rpx;
+    padding-bottom: 10rpx;
+    border-bottom: 1px solid #cccccc;
     
-    view.comment_info {
+    .comment_info {
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      view.comment_user_info {
+      .comment_user_info {
 
         .user_avatar {
           width: 60rpx;
@@ -165,13 +167,13 @@ view.comment_wrap {
         }
       }
 
-      view.comment_score {
+      .comment_score {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-size: 26rpx;
 
-        view.dish_stars {
+        .dish_stars {
             margin-left: 15rpx;
 
             text.iconfont.icon-xingxing {
@@ -182,18 +184,18 @@ view.comment_wrap {
       }
     }
 
-    view.comment_content {
+    .comment_content {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       @comment_content_gap: 20rpx;
 
-      view.comment_text {
+      .comment_text {
         margin-top: @comment_content_gap;
         font-size: 30rpx;
       }
 
-      view.comment_info2 {
+      .comment_info2 {
         display: flex;
         justify-content: space-between;
         font-size: 26rpx;

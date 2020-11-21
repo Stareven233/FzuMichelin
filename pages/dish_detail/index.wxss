@@ -14,95 +14,95 @@
   width: 240rpx;
   border-radius: 6%;
 }
-.dish_wrap view.dish_info {
+.dish_wrap .dish_info {
   flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.dish_wrap view.dish_info .dish_name {
+.dish_wrap .dish_info .dish_name {
   font-size: 32rpx;
   font-weight: 700;
 }
-.dish_wrap view.dish_info view.dish_price_row {
+.dish_wrap .dish_info .dish_price_row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
   font-size: 30rpx;
 }
-.dish_wrap view.dish_info view.dish_price_row .dish_score {
+.dish_wrap .dish_info .dish_price_row .dish_score {
   display: flex;
   justify-content: space-between;
 }
-.dish_wrap view.dish_info view.dish_price_row .dish_score .dish_stars {
+.dish_wrap .dish_info .dish_price_row .dish_score .dish_stars {
   color: #eef90e;
   margin-right: 10rpx;
 }
-.dish_wrap view.dish_info view.dish_loc {
+.dish_wrap .dish_info .dish_loc {
   font-size: 26rpx;
   color: #555555;
 }
-.dish_wrap view.dish_info view.dish_loc text:first-child {
+.dish_wrap .dish_info .dish_loc text:first-child {
   margin-right: 30rpx;
 }
-.dish_wrap view.dish_info view.dish_taste_wrap {
+.dish_wrap .dish_info .dish_taste_wrap {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: start;
 }
-.dish_wrap view.dish_info view.dish_taste_wrap view.dish_taste {
+.dish_wrap .dish_info .dish_taste_wrap .dish_taste {
   font-size: 26rpx;
   padding: 6rpx 14rpx;
   margin-right: 8rpx;
   background-color: #a7f08a;
   border-radius: 30%;
 }
-view.comment_wrap {
+.comment_wrap {
   margin: 30rpx 40rpx;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-view.comment_wrap text.comment_header {
+.comment_wrap text.comment_header {
   font-size: 34rpx;
   font-weight: 700;
 }
-view.comment_wrap view.comment_editor {
+.comment_wrap .comment_editor {
   margin: 0 30rpx 50rpx;
   font-size: 28rpx;
   padding-bottom: 30rpx;
   border-bottom: 1px solid #cccccc;
 }
-view.comment_wrap view.comment_editor .comment_input {
+.comment_wrap .comment_editor .comment_input {
   height: 1.2em;
   margin-top: 20rpx;
   padding: 14rpx 8rpx;
   border: 1px solid #cccccc;
 }
-view.comment_wrap view.comment_editor .comment_input.active {
+.comment_wrap .comment_editor .comment_input.active {
   height: 112rpx;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .img_uploader {
+.comment_wrap .comment_editor .editor_hidden_wrap .img_uploader {
   width: 140rpx;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar {
+.comment_wrap .comment_editor .editor_hidden_wrap .comment_score_bar {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont {
+.comment_wrap .comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont {
   font-size: 42rpx;
   margin-right: 10rpx;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.kinn {
+.comment_wrap .comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.kinn {
   color: #eef90e;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.hiiro {
+.comment_wrap .comment_editor .editor_hidden_wrap .comment_score_bar .comment_stars .iconfont.hiiro {
   color: #c4c3c3;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .comment_submit_btn {
+.comment_wrap .comment_editor .editor_hidden_wrap .comment_score_bar .comment_submit_btn {
   width: 112rpx;
   height: 112rpx;
   line-height: 112rpx;
@@ -111,48 +111,50 @@ view.comment_wrap view.comment_editor .editor_hidden_wrap .comment_score_bar .co
   background-color: #f19d63;
   border-radius: 10%;
 }
-view.comment_wrap view.comment_editor .editor_hidden_wrap.hidden {
+.comment_wrap .comment_editor .editor_hidden_wrap.hidden {
   display: none;
 }
-view.comment_wrap view.comment_box {
+.comment_wrap .comment_box {
   margin: 10rpx 30rpx 30rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #cccccc;
 }
-view.comment_wrap view.comment_box view.comment_info {
+.comment_wrap .comment_box .comment_info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-view.comment_wrap view.comment_box view.comment_info view.comment_user_info .user_avatar {
+.comment_wrap .comment_box .comment_info .comment_user_info .user_avatar {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
 }
-view.comment_wrap view.comment_box view.comment_info view.comment_user_info text {
+.comment_wrap .comment_box .comment_info .comment_user_info text {
   color: #ee6d18;
 }
-view.comment_wrap view.comment_box view.comment_info view.comment_score {
+.comment_wrap .comment_box .comment_info .comment_score {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   font-size: 26rpx;
 }
-view.comment_wrap view.comment_box view.comment_info view.comment_score view.dish_stars {
+.comment_wrap .comment_box .comment_info .comment_score .dish_stars {
   margin-left: 15rpx;
 }
-view.comment_wrap view.comment_box view.comment_info view.comment_score view.dish_stars text.iconfont.icon-xingxing {
+.comment_wrap .comment_box .comment_info .comment_score .dish_stars text.iconfont.icon-xingxing {
   color: #eef90e;
   margin-right: 5rpx;
 }
-view.comment_wrap view.comment_box view.comment_content {
+.comment_wrap .comment_box .comment_content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-view.comment_wrap view.comment_box view.comment_content view.comment_text {
+.comment_wrap .comment_box .comment_content .comment_text {
   margin-top: 20rpx;
   font-size: 30rpx;
 }
-view.comment_wrap view.comment_box view.comment_content view.comment_info2 {
+.comment_wrap .comment_box .comment_content .comment_info2 {
   display: flex;
   justify-content: space-between;
   font-size: 26rpx;
@@ -160,10 +162,10 @@ view.comment_wrap view.comment_box view.comment_content view.comment_info2 {
   font-weight: 500;
   margin-top: 20rpx;
 }
-view.comment_wrap view.comment_box view.comment_content .comment_pic_wrap {
+.comment_wrap .comment_box .comment_content .comment_pic_wrap {
   overflow: hidden;
 }
-view.comment_wrap view.comment_box view.comment_content .comment_pic_wrap .comment_pic {
+.comment_wrap .comment_box .comment_content .comment_pic_wrap .comment_pic {
   margin-top: 20rpx;
   max-height: 300rpx;
 }
