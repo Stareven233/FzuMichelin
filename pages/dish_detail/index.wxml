@@ -39,9 +39,10 @@
   <view class="comment_editor" catchtap="commentInputFocus">
     <!-- emmm当时这里或许应该直接用form标签替代 -->
 
-    <textarea type="text" value="{{commentText}}" bindinput="handleInputChange" class="comment_input {{commentInputFocused ? 'active' : ''}}"
+    <textarea type="text" value="{{commentText}}" class="comment_input {{commentInputFocused ? 'active' : ''}}"
+    disabled="{{canComment !== true}}"
     placeholder="{{commentInputFocused ? '' : '发表对这道菜的评论'}}" confirm-type="done" maxlength="1000"
-    bindfocus="commentInputFocus" bindblur=""	bindconfirm="handleCommentSend" 
+    bindfocus="commentInputFocus" bindblur="" bindinput="handleInputChange"	bindconfirm="handleCommentSend" 
     >
     </textarea>
 
@@ -92,7 +93,7 @@
       <view class="comment_info2">
         <view class="comment_date">{{item.time}}</view>
         <view class="like">
-          <!-- <text class="iconfont icon-dianzan"></text> -->
+          <text class="iconfont icon-dianzan"></text>
           <text>{{likeNum}}</text>
         </view>
       </view>

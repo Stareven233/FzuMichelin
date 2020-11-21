@@ -37,6 +37,7 @@ Page({
     commentFullScore: 5,
     dishUserId: {},
     commentText: '',
+    canComment: true,
   },
 
   initCommentData() {
@@ -72,16 +73,40 @@ Page({
       v.starNum = Math.round(v.score)
     })
 
+    // 查询该用户能否评论该道菜
+    url = '/comment/cancomment'
+    data = { dishid: dishId, uid: userInfo.uid || 'anonymous' }
+    res = await request({ url, data, method: 'POST' })
+    const canComment = res.data
+    let commentText = ''
+    switch (canComment) {
+      case 'error1':
+        commentText = '您已被管理员限制评论'
+        break
+      case 'error2':
+        commentText = '当日评论次数已尽，提升等级可获取更多次数'
+        break
+      case 'error3':
+        commentText = '同一菜品只可评论一次'
+        break
+      default:
+        break
+    }
+
     this.setData({
       dish,
       comments,
+      canComment,
+      commentText,
       selectFile: this.selectFile.bind(this),
       uplaodFile: this.uplaodFile.bind(this)
   })
   },
 
   commentInputFocus() {
-    this.setData({ commentInputFocused: true })
+    if(this.data.canComment === true) {
+      this.setData({ commentInputFocused: true })
+    }
   },
 
   commentInputblur() {

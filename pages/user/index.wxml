@@ -6,6 +6,7 @@
     <view class="user_info">
       <image class="user_avatar" src="{{userInfo.avatarUrl}}"></image>
       <view class="user_name">{{userInfo.nickName}}</view>
+      <view class="user_credit">积分：{{userInfo.credit}}</view>
     </view>
   </view>
   <button wx:else class="user_login_btn" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button>

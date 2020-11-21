@@ -15,10 +15,16 @@
 }
 .user_info_wrap .user_img_wrap .user_info {
   position: absolute;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  top: 20%;
   text-align: center;
+  color: #fff;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .user_info_wrap .user_img_wrap .user_info .user_avatar {
   width: 150rpx;
@@ -26,8 +32,7 @@
   border-radius: 50%;
 }
 .user_info_wrap .user_img_wrap .user_info .user_name {
-  color: #fff;
-  margin-top: 40rpx;
+  margin-top: 30rpx;
 }
 .user_info_wrap .user_login_btn {
   position: absolute;
