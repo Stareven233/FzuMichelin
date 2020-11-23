@@ -20,9 +20,22 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.dish_wrap .dish_info .dish_name {
+.dish_wrap .dish_info .dish_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish_wrap .dish_info .dish_header .dish_name {
   font-size: 32rpx;
   font-weight: 700;
+}
+.dish_wrap .dish_info .dish_header .dish_collect {
+  font-size: 44rpx;
+  color: #cccccc;
+}
+.dish_wrap .dish_info .dish_header .dish_collect.active {
+  color: #e45b4c;
 }
 .dish_wrap .dish_info .dish_price_row {
   display: flex;
@@ -65,7 +78,7 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.comment_wrap text.comment_header {
+.comment_wrap .comment_header {
   font-size: 34rpx;
   font-weight: 700;
 }
@@ -144,7 +157,7 @@
 .comment_wrap .comment_box .comment_info .comment_score .dish_stars {
   margin-left: 15rpx;
 }
-.comment_wrap .comment_box .comment_info .comment_score .dish_stars text.iconfont.icon-xingxing {
+.comment_wrap .comment_box .comment_info .comment_score .dish_stars .iconfont.icon-xingxing {
   color: #eef90e;
   margin-right: 5rpx;
 }

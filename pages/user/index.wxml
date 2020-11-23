@@ -13,19 +13,19 @@
 </view>
 
 <view class="user_main">
-    <navigator class="address_wrap menu_item">
+    <navigator class="address_wrap menu_item" url="/pages/collect/index">
       <text class="iconfont icon-shoucang"></text>
-      <text url="/pages/collect/index">收藏菜品</text>
+      <text>收藏菜品</text>
     </navigator>
 
-    <navigator class="liked_wrap menu_item">
+    <navigator class="liked_wrap menu_item" url="/pages/like/index">
       <text class="iconfont icon-dianzan"></text>
       <text>赞过</text>
     </navigator>
 
-    <navigator class="feedback_wrap menu_item">
+    <navigator class="feedback_wrap menu_item" url="/pages/history/index">
       <text class="iconfont icon-lishijilu"></text>
-      <text url="/pages/history/index">历史评论</text>
+      <text>历史评论</text>
     </navigator>
 
     <navigator class="feedback_wrap menu_item">

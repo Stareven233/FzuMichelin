@@ -35,9 +35,10 @@ Page({
     files: [],
     commentScore: 3,
     commentFullScore: 5,
-    dishUserId: {},
+    dishUserId: {}, // { dishid: dishId, uid: userInfo.uid || 'anonymous' }
     commentText: '',
     canComment: true,
+    isCollected: false,
   },
 
   initCommentData() {
@@ -208,6 +209,27 @@ Page({
       files: [{url: url}]
     })
     console.log('upload success', e.detail)
-  }
+  },
+
+  async handleCollect(e) {
+    if(this.data.isCollected) {
+      const res = await request({ url: `/user/deletecollection?id=${this.data.collectId}`, method: "POST" })
+      console.log(res);
+      this.setData({ isCollected: false, collectId: null })
+      await showToast({title: '取消收藏'})
+    }
+    else {
+      const data = this.data.dishUserId
+      const res = await request({ url: '/user/addcollection', data, method: "POST" })
+      // console.log(res);
+      if(res.statusCode === 200) {
+        this.setData({ isCollected: true, collectId: res.data.id })
+        await showToast({title: '收藏成功'})
+      }
+      else {        
+        await showToast({title: '收藏失败'})
+      }
+    }
+  },
 
 })

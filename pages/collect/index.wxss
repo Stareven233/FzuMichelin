@@ -1,0 +1,71 @@
+/* pages/collect/index.wxss */
+.dish_wrap {
+  display: flex;
+  justify-content: space-around;
+  margin: 30rpx 40rpx;
+}
+.dish_wrap .dish_img_wrap {
+  flex: 3;
+  overflow: hidden;
+}
+.dish_wrap .dish_img_wrap .dish_img {
+  background-color: #55897e;
+  height: 240rpx;
+  width: 240rpx;
+  border-radius: 6%;
+}
+.dish_wrap .dish_info {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.dish_wrap .dish_info .dish_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.dish_wrap .dish_info .dish_header .dish_name {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.dish_wrap .dish_info .dish_header .dish_collect.active {
+  font-size: 44rpx;
+  color: #e45b4c;
+}
+.dish_wrap .dish_info .dish_price_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 30rpx;
+}
+.dish_wrap .dish_info .dish_price_row .dish_score {
+  display: flex;
+  justify-content: space-between;
+}
+.dish_wrap .dish_info .dish_price_row .dish_score .dish_stars {
+  color: #eef90e;
+  margin-right: 10rpx;
+}
+.dish_wrap .dish_info .dish_loc {
+  font-size: 26rpx;
+  color: #555555;
+}
+.dish_wrap .dish_info .dish_loc text:first-child {
+  margin-right: 30rpx;
+}
+.dish_wrap .dish_info .dish_taste_wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: start;
+}
+.dish_wrap .dish_info .dish_taste_wrap .dish_taste {
+  font-size: 26rpx;
+  padding: 6rpx 14rpx;
+  margin-right: 8rpx;
+  background-color: #a7f08a;
+  border-radius: 30%;
+}

@@ -10,6 +10,7 @@
 7 搜索框组件的input设置value代替placeholder，value值来自推荐第一个菜品名
 8 index中onLoad抽成一个函数，在onShow判断，当logined与userInfo不符时(说明刚登录)主动加载数据
 9 菜品详情页uploadfile接口要求必带文件，于是评论只能必带图片...
+10 口味加上 香，鲜
 */
 
 App({

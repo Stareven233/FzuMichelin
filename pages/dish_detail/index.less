@@ -23,9 +23,24 @@
     flex-direction: column;
     justify-content: space-around;
 
-    .dish_name {
-      font-size: 32rpx;
-      font-weight: 700;
+    .dish_header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .dish_name {
+        font-size: 32rpx;
+        font-weight: 700;
+      }
+    
+      .dish_collect {
+        font-size: 44rpx;
+        color: #cccccc;
+      }
+      .dish_collect.active {
+        color: #e45b4c;
+      }
     }
 
     .dish_price_row {
@@ -80,7 +95,7 @@
   flex-direction: column;
   justify-content: space-around;
 
-  text.comment_header {
+  .comment_header {
     font-size: 34rpx;
     font-weight: 700;
   }
@@ -179,7 +194,7 @@
         .dish_stars {
             margin-left: 15rpx;
 
-            text.iconfont.icon-xingxing {
+            .iconfont.icon-xingxing {
             color: #eef90e;
             margin-right: 5rpx;
           }

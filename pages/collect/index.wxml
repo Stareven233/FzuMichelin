@@ -1,0 +1,42 @@
+<!--pages/collect/index.wxml-->
+
+<view class="dish_wrap" wx:for="{{dishes}}" wx:key="id">
+  <view class="dish_img_wrap">
+    <image class="dish_img" src="{{item.smallpic}}" mode="aspectFill"></image>
+  </view>
+
+  <view class="dish_info">
+    <view class="dish_header">
+      <text class="dish_name">{{item.dishname}}</text>
+      <text 
+      class="dish_collect active iconfont icon-shoucang1"
+      bindtap="handleCollect"
+      data-id="{{item.id}}"
+      data-idx="{{index}}"
+      >
+      </text>
+    </view>
+    <!-- 同一种数据两种风格的接口返回值，就nm离谱，这下子不好改成组件了 -->
+
+    <view class="dish_price_row">
+      <view class="dish_score">
+        <view class="dish_stars">
+          <!-- 下面用icon标签会导致父元素view上方留了一点空间，跟右边的评分价格无法对齐 -->
+          <text class="iconfont icon-xingxing" wx:for="{{item.starNum}}" wx:key="*this"></text>
+        </view>
+        <view>{{item.score}}分</view>
+      </view>
+      <view class="dish_price">￥{{item.dishprice}}</view>
+    </view>
+
+    <view class="dish_loc">
+      <text>{{item.restaurantname}}</text>
+      <text>{{item.restaurantlocation}}</text>
+    </view>
+
+    <view class="dish_taste_wrap">
+      <view class="dish_taste" wx:for="{{item.tastes}}" wx:key="*this" wx:for-item="taste">{{taste}}</view>
+    </view>
+  </view>
+
+</view>

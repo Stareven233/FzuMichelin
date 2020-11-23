@@ -7,7 +7,14 @@
   </view>
 
   <view class="dish_info">
-    <text class="dish_name">{{item.name}}</text>
+    <view class="dish_header">
+      <text class="dish_name">{{item.name}}</text>
+      <text 
+      class="dish_collect {{isCollected ? 'active' : ''}} iconfont icon-shoucang1"
+      bindtap="handleCollect"
+      >
+      </text>
+    </view>
 
     <view class="dish_price_row">
       <view class="dish_score">
