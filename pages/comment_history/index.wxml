@@ -1,0 +1,39 @@
+<!--pages/comment_history/index.wxml-->
+<view class="comment_box" wx:for="{{comments}}" wx:key="commentid">
+
+  <view class="comment_info">
+
+    <view class="comment_user_info">
+      <!-- <image class="user_avatar" src="{{}}" mode="aspectFill"></image> -->
+      <text>{{item.username}}</text>
+    </view>
+
+    <view class="comment_score">
+      <text>打分</text>
+      <view class="dish_stars">
+        <text class="iconfont icon-xingxing" wx:for="{{item.starNum}}" wx:key="*this"></text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="comment_content">
+    
+    <!-- <view class="comment_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam et ut iste velit quae? Perspiciatis maiores iure facilis repellendus? Est nemo debitis illo, ea id eligendi dolorum quis dolor facilis!</view> -->
+    <view class="comment_text">{{item.text}}</view>
+
+    <view class="comment_pic_wrap">
+      <image class="comment_pic" src="{{item.picurl}}" mode="heightFix"></image>
+    </view>
+
+    <view class="comment_info2">
+      <view class="comment_date">{{item.time}}</view>
+      <view class="like">
+        <text class="iconfont icon-dianzan"></text>
+        <text>{{likeNum}}</text>
+      </view>
+    </view>
+
+  </view>
+
+</view>

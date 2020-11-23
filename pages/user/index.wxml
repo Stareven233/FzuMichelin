@@ -23,7 +23,7 @@
       <text>赞过</text>
     </navigator>
 
-    <navigator class="feedback_wrap menu_item" url="/pages/history/index">
+    <navigator class="feedback_wrap menu_item" url="/pages/comment_history/index">
       <text class="iconfont icon-lishijilu"></text>
       <text>历史评论</text>
     </navigator>

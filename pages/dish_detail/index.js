@@ -6,30 +6,7 @@ import { compressImage, showToast } from '../../utils/asyncWx'
 Page({
   data: {
     dish: {},
-    comments: [
-      {
-        "username": "兰杰",
-        "commentid": 103,
-        "text": "good",
-        "picurl": "https://www.jieblue.xyz:8080/static/comment/7094a7a5897446cc9b510effce4d401a202011162047040318025162.jpeg",
-        "score": 5.0,
-        "time": "2020-11-13",
-        "dishid": 2,
-        "userid": "031802516",
-        "smallpic": "https://www.jieblue.xyz:8080/static/smallcomment/7094a7a5897446cc9b510effce4d401a202011162047040318025162.jpeg"
-      },
-      {
-        "username": "兰杰",
-        "commentid": 104,
-        "text": "good",
-        "picurl": "https://www.jieblue.xyz:8080/static/comment/7094a7a5897446cc9b510effce4d401a202011162047040318025162.jpeg",
-        "score": 5.0,
-        "time": "2020-11-13",
-        "dishid": 2,
-        "userid": "031802516",
-        "smallpic": "https://www.jieblue.xyz:8080/static/smallcomment/7094a7a5897446cc9b510effce4d401a202011162047040318025162.jpeg"
-      }
-    ],
+    comments: [],
     commentInputFocused: false,
     fileUrl: '',
     files: [],

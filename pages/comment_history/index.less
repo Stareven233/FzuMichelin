@@ -1,0 +1,74 @@
+/* pages/comment_history/index.wxss */
+
+.comment_box {
+  margin: 10rpx 30rpx 50rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #cccccc;
+  
+  .comment_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .comment_user_info {
+
+      .user_avatar {
+        width: 60rpx;
+        height: 60rpx;
+        border-radius: 50%;
+      }
+
+      text {
+        // color: var(--themeColor);
+        color: #ee6d18;
+      }
+    }
+
+    .comment_score {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 26rpx;
+
+      .dish_stars {
+          margin-left: 15rpx;
+
+          .iconfont.icon-xingxing {
+          color: #eef90e;
+          margin-right: 5rpx;
+        }
+      }
+    }
+  }
+
+  .comment_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @comment_content_gap: 20rpx;
+
+    .comment_text {
+      margin-top: @comment_content_gap;
+      font-size: 30rpx;
+    }
+
+    .comment_info2 {
+      display: flex;
+      justify-content: space-between;
+      font-size: 26rpx;
+      color: #555555;
+      font-weight: 500;
+      margin-top: @comment_content_gap;
+    }
+
+    .comment_pic_wrap {
+      overflow: hidden;
+
+      .comment_pic {
+      margin-top: @comment_content_gap;
+      max-height: 300rpx;
+      }
+    }
+  }
+}

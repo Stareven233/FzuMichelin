@@ -88,12 +88,18 @@
         {
           "name": "菜品详情",
           "pathName": "pages/dish_detail/index",
-          "query": "dishId=823",
+          "query": "dishId=820",
           "scene": null
         },
         {
           "name": "收藏菜品",
           "pathName": "pages/collect/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "历史评论",
+          "pathName": "pages/comment_history/index",
           "query": "",
           "scene": null
         }
