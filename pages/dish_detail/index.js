@@ -65,6 +65,11 @@ Page({
     dish.tastes = !dish.favor ? [] : dish.favor.split(',')
     dish.starNum = Math.round(dish.score)
 
+    // 查询该菜品是否已收藏
+    url = '/user/iscollected'
+    res = await request({ url, data: this.data.dishUserId, method: 'POST' })
+    const isCollected = res.data
+
     // 请求该菜品下的评论
     url = `/dish/getcomment?did=${dishId}` 
     // const comments = this.data.comments
@@ -96,6 +101,7 @@ Page({
 
     this.setData({
       dish,
+      isCollected,
       comments,
       canComment,
       commentText,
