@@ -10,7 +10,7 @@
     <view class="dish_header">
       <text class="dish_name">{{item.name}}</text>
       <text 
-      class="dish_collect {{isCollected ? 'active' : ''}} iconfont icon-shoucang1"
+      class="dish_collect {{collectId ? 'active' : ''}} iconfont icon-shoucang1"
       bindtap="handleCollect"
       >
       </text>
@@ -76,7 +76,7 @@
 
       <view class="comment_user_info">
         <!-- <image class="user_avatar" src="{{}}" mode="aspectFill"></image> -->
-        <text>{{item.username}}</text>
+        <text class="user_name">{{item.username}}</text>
       </view>
 
       <view class="comment_score">
@@ -99,9 +99,10 @@
 
       <view class="comment_info2">
         <view class="comment_date">{{item.time}}</view>
-        <view class="like">
+        <view class="comment_like">
           <text class="iconfont icon-dianzan"></text>
-          <text>{{likeNum}}</text>
+          <text class="comment_likeNum">{{item.likeNum}}</text>
+          <!-- <text class="comment_likeNum">{{item.likeNum || 233}}</text> -->
         </view>
       </view>
 

@@ -144,8 +144,8 @@
   height: 60rpx;
   border-radius: 50%;
 }
-.comment_wrap .comment_box .comment_info .comment_user_info text {
-  color: #ee6d18;
+.comment_wrap .comment_box .comment_info .comment_user_info .user_name {
+  color: var(--themeColor);
 }
 .comment_wrap .comment_box .comment_info .comment_score {
   display: flex;
@@ -170,18 +170,33 @@
   margin-top: 20rpx;
   font-size: 30rpx;
 }
+.comment_wrap .comment_box .comment_content .comment_pic_wrap {
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.comment_wrap .comment_box .comment_content .comment_pic_wrap .comment_pic {
+  max-height: 300rpx;
+}
 .comment_wrap .comment_box .comment_content .comment_info2 {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   font-size: 26rpx;
   color: #555555;
   font-weight: 500;
   margin-top: 20rpx;
 }
-.comment_wrap .comment_box .comment_content .comment_pic_wrap {
-  overflow: hidden;
+.comment_wrap .comment_box .comment_content .comment_info2 .comment_like {
+  display: flex;
+  align-items: flex-end;
 }
-.comment_wrap .comment_box .comment_content .comment_pic_wrap .comment_pic {
-  margin-top: 20rpx;
-  max-height: 300rpx;
+.comment_wrap .comment_box .comment_content .comment_info2 .comment_like .iconfont {
+  font-size: 38rpx;
+  margin-right: 6rpx;
+}
+.comment_wrap .comment_box .comment_content .comment_info2 .comment_like .iconfont.active {
+  color: var(--themeColor);
+}
+.comment_wrap .comment_box .comment_content .comment_info2 .comment_like .comment_likeNum {
+  padding: 0 0 4rpx;
 }

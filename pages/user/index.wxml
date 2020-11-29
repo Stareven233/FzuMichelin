@@ -18,10 +18,10 @@
       <text>收藏菜品</text>
     </navigator>
 
-    <navigator class="liked_wrap menu_item" url="/pages/like/index">
+    <!-- <navigator class="liked_wrap menu_item" url="/pages/like/index">
       <text class="iconfont icon-dianzan"></text>
       <text>赞过</text>
-    </navigator>
+    </navigator> -->
 
     <navigator class="feedback_wrap menu_item" url="/pages/comment_history/index">
       <text class="iconfont icon-lishijilu"></text>

@@ -9,13 +9,13 @@ Page({
     comments: [],
     commentInputFocused: false,
     fileUrl: '',
-    files: [],
+    files: [], // 实际指的是uploader中的图片
     commentScore: 3,
     commentFullScore: 5,
     dishUserId: {}, // { dishid: dishId, uid: userInfo.uid || 'anonymous' }
     commentText: '',
     canComment: true,
-    isCollected: false,
+    collectId: null, // 被收藏后才有的收藏id
   },
 
   initCommentData() {
@@ -45,7 +45,9 @@ Page({
     // 查询该菜品是否已收藏
     url = '/user/iscollected'
     res = await request({ url, data: this.data.dishUserId, method: 'POST' })
-    const isCollected = res.data
+    if(typeof res.data === 'number') {
+      this.setData({ collectId: res.data })
+    }
 
     // 请求该菜品下的评论
     url = `/dish/getcomment?did=${dishId}` 
@@ -78,7 +80,6 @@ Page({
 
     this.setData({
       dish,
-      isCollected,
       comments,
       canComment,
       commentText,
@@ -195,22 +196,24 @@ Page({
   },
 
   async handleCollect(e) {
-    if(this.data.isCollected) {
+    if(this.data.collectId) {
       const res = await request({ url: `/user/deletecollection?id=${this.data.collectId}`, method: "POST" })
-      console.log(res);
-      this.setData({ isCollected: false, collectId: null })
-      await showToast({title: '取消收藏'})
+      // console.log(res);
+      if(res.data === true) {
+        this.setData({ collectId: null })
+        await showToast({title: '取消收藏'})
+      }
     }
     else {
       const data = this.data.dishUserId
       const res = await request({ url: '/user/addcollection', data, method: "POST" })
       // console.log(res);
-      if(res.statusCode === 200) {
-        this.setData({ isCollected: true, collectId: res.data.id })
+      if(typeof res.data === 'number' && res.data !== -1) {
+        this.setData({ collectId: res.data })
         await showToast({title: '收藏成功'})
       }
       else {        
-        await showToast({title: '收藏失败'})
+        await showToast({title: '收藏失败或重复收藏'})
       }
     }
   },
