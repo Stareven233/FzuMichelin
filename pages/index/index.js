@@ -8,83 +8,45 @@ Page({
   data: {
     tastes: [{
       taste: '酸',
-      color: 'orange'
+      color: '#e2e04f'
     }, {
       taste: '甜',
-      color: 'orange'
+      color: '#fc8769'
     }, {
       taste: '苦',
-      color: 'orange'
+      color: '#2e8b2b'
     }, {
       taste: '辣',
-      color: 'orange'
+      color: '#c71f13'
     }, {
       taste: '咸',
-      color: 'orange'
+      color: '#419bd6'
     }, {
       taste: '清淡', 
-      color: 'orange'
+      color: '#36d658'
     }, { 
       taste: '重口', 
-      color: 'orange' 
+      color: '#582072' 
+    }, { 
+      taste: '香', 
+      color: '#e48227' 
+    }, { 
+      taste: '鲜', 
+      color: '#ec78c0' 
     }],
     logined: false,
-    // dishes: [],
-    dishes: [
-      {
-          "id": 10,
-          "name": "双拼烤肉+烤鸭饭",
-          "score": 3.95,
-          "commentnumber": 2,
-          "price": 17.0,
-          "favor": "咸",
-          "category": null,
-          "restaurantname": "墨西哥烤肉饭",
-          "restaurantlocation": "玫瑰园二楼",
-          "picurl": null
-      },
-      {
-          "id": 6,
-          "name": "黑椒茶油烤鸭饭",
-          "score": 3.0,
-          "commentnumber": 1,
-          "price": 16.0,
-          "favor": "甜",
-          "category": null,
-          "restaurantname": "墨西哥烤肉饭",
-          "restaurantlocation": "玫瑰园二楼",
-          "picurl": null
-      },
-      {
-          "id": 7,
-          "name": "酸梅茶油烤鸭饭",
-          "score": 3.0,
-          "commentnumber": 1,
-          "price": 16.0,
-          "favor": "酸",
-          "category": null,
-          "restaurantname": "墨西哥烤肉饭",
-          "restaurantlocation": "玫瑰园二楼",
-          "picurl": null
-      },
-      {
-          "id": 8,
-          "name": "虎邦辣酱茶油烤鸭饭",
-          "score": 3.0,
-          "commentnumber": 1,
-          "price": 17.0,
-          "favor": "咸,辣,重口味",
-          "category": null,
-          "restaurantname": "墨西哥烤肉饭",
-          "restaurantlocation": "玫瑰园二楼",
-          "picurl": null
-      }
-    ],
+    dishes: [],
   },
   
-  onShow: function () {
+  onShow: async function () {
     const userInfo = wx.getStorageSync('userInfo')
-    this.setData({logined: !!userInfo})
+    const logined = !!userInfo
+    if(!logined && !this.data.dishes) {
+      // 有用户信息且没有dishes就说明刚从个人页面登录完回来，需要加载今日推荐
+      await this.onLoad()
+      // console.log(!logined, !this.data.dishes)
+    }
+    this.setData({ logined })
   },
 
   onLoad: async function() {

@@ -27,13 +27,27 @@ searchBox {
       border-radius: 50%;
       color: #ffffff;
       // background-color: var(--themeColor);
-      background-color: orange;
+      background-color: #ec78c0;
     }
   }
 }
 
 .recommend_wrap {
   margin: 100rpx 0;
+
+  .login_tip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100rpx;
+    color: #555555;
+
+    .login_nav {
+      color: var(--themeColor);
+      font-size: 40rpx;
+    }
+  }
 
   view.recommend_lists {
     .dish_wrap {

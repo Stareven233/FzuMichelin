@@ -23,10 +23,22 @@ searchBox {
   border-color: #fff;
   border-radius: 50%;
   color: #ffffff;
-  background-color: orange;
+  background-color: #ec78c0;
 }
 .recommend_wrap {
   margin: 100rpx 0;
+}
+.recommend_wrap .login_tip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx;
+  color: #555555;
+}
+.recommend_wrap .login_tip .login_nav {
+  color: var(--themeColor);
+  font-size: 40rpx;
 }
 .recommend_wrap view.recommend_lists .dish_wrap {
   display: flex;
