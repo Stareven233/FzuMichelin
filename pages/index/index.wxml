@@ -10,7 +10,7 @@
     <view class="taste_navs">
       <navigator
       url="/pages/dish/index?favor={{item.taste}}"
-      open-type="redirect"
+      open-type="navigate"
       class="taste_nav"
       wx:for="{{tastes}}"
       wx:key="taste"

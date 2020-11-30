@@ -1,5 +1,9 @@
 {
   "usingComponents": {
     "searchBox": "../../components/searchBox/searchBox"
-  }
+  },
+  "onReachBottomDistance": 300,
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#f38763"
 }

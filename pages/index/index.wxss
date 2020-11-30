@@ -23,7 +23,7 @@ searchBox {
   border-color: #fff;
   border-radius: 50%;
   color: #ffffff;
-  background-color: #ec78c0;
+  background-color: #4edf6d;
 }
 .recommend_wrap {
   margin: 100rpx 0;
