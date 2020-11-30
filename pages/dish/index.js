@@ -37,5 +37,11 @@ Page({
       // todo 下拉加载新数据
     })
   },
-
+  
+  handleDishTap(e) {
+    const { dishId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/dish_detail/index?dishId=${dishId}`,
+    })
+  },
 })

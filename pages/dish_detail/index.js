@@ -178,8 +178,9 @@ Page({
   // })
   uplaodFile(files) {
     // console.log('upload files', files)
-    return compressImage({ src: files.tempFilePaths[0], quality: 30 })
+    return compressImage({ src: files.tempFilePaths[0], quality: 20 })
     // 本想不断检测压缩后图片size是否合适再按情况返回...
+    // 原本压缩质量定为30，可感觉加载还是太慢了
   },
 
   uploadError(e) {
@@ -218,4 +219,11 @@ Page({
     }
   },
 
+  handleImgPreview(e) {
+    const { url } = e.currentTarget.dataset
+    wx.previewImage({
+      current: url, // 当前显示图片的http链接
+      urls: [url] // 需要预览的图片http链接列表
+    })
+  },
 })

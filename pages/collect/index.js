@@ -39,4 +39,11 @@ Page({
     await showToast({title: '取消收藏成功'})
   },
   
+  handleDishTap(e) {
+    const { dishId } = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/dish_detail/index?dishId=${dishId}`,
+    })
+  },
+
 })

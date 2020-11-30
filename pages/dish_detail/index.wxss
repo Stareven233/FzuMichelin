@@ -139,12 +139,17 @@
   justify-content: space-between;
   align-items: center;
 }
+.comment_wrap .comment_box .comment_info .comment_user_info {
+  display: flex;
+  align-items: center;
+}
 .comment_wrap .comment_box .comment_info .comment_user_info .user_avatar {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
 }
 .comment_wrap .comment_box .comment_info .comment_user_info .user_name {
+  margin-left: 20rpx;
   color: var(--themeColor);
 }
 .comment_wrap .comment_box .comment_info .comment_score {

@@ -75,7 +75,7 @@
     <view class="comment_info">
 
       <view class="comment_user_info">
-        <!-- <image class="user_avatar" src="{{}}" mode="aspectFill"></image> -->
+        <image class="user_avatar" src="{{item.headurl}}" mode="aspectFill"></image>
         <text class="user_name">{{item.username}}</text>
       </view>
 
@@ -94,7 +94,7 @@
       <view class="comment_text">{{item.text}}</view>
 
       <view class="comment_pic_wrap">
-        <image class="comment_pic" src="{{item.picurl}}" mode="heightFix"></image>
+        <image class="comment_pic" src="{{item.picurl}}" data-url="{{item.picurl}}" bindtap="handleImgPreview" mode="heightFix"></image>
       </view>
 
       <view class="comment_info2">
