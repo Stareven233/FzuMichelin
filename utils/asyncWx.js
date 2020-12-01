@@ -83,11 +83,10 @@ export const openSetting = () => {
  * promise 形式  showModal
  * @param {object} param0 参数
  */
-export const showModal = ({ content }) => {
+export const showModal = (params) => {
   return new Promise((resolve, reject) => {
     wx.showModal({
-      title: '提示',
-      content: content,
+      ...params,
       success: (result) => {
         resolve(result);
       },
@@ -102,10 +101,10 @@ export const showModal = ({ content }) => {
  *  promise 形式  showToast
  * @param {object} param0 参数
  */
-export const showToast = ({ title }) => {
+export const showToast = (params) => {
   return new Promise((resolve, reject) => {
     wx.showToast({
-      title: title,
+      ...params,
       icon: 'none',
       success: (res) => {
         resolve(res);

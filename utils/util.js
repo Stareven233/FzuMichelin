@@ -1,3 +1,5 @@
+import { showToast } from './asyncWx'
+
 //CommonJS语法，配合 const util = require('../../utils/util.js')
 // module.exports = {
 //   formatTime: formatTime
@@ -43,7 +45,15 @@ export const request = (params) => {
       success: (res) => {
         resolve(res)
       },
-      fail: (err) => {
+      fail: async (err) => {
+        let msg = err.errMsg
+        if(err.errMsg.indexOf('fail timeout') >= 0) {
+          msg = "请求超时"
+        }
+        await showToast({
+          title: `${msg}\n\n请尝试刷新`,
+          duration: 3000
+        })
         reject(err)
       },
       complete: () => {

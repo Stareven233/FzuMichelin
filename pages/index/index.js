@@ -14,9 +14,9 @@ Page({
       taste: '甜',
       color: '#f87c5d'
     }, {
-    //   taste: '苦',
-    //   color: '#2e8b2b'
-    // }, {
+      taste: '苦',
+      color: '#2e8b2b'
+    }, {
     // 接口数据里根本就没有这个口味的菜啊！
       taste: '辣',
       color: '#c71f13'
