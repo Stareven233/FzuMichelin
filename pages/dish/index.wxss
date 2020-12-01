@@ -2,7 +2,7 @@
 .dish_wrap {
   display: flex;
   justify-content: space-around;
-  margin: 30rpx 40rpx;
+  margin: 30rpx 40rpx 100rpx;
 }
 .dish_wrap .dish_img_wrap {
   flex: 3;

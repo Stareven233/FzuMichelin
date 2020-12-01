@@ -39,10 +39,8 @@ Component({
       
       let keyword = e.detail.value
       let histories = wx.getStorageSync('histories') || []
-      console.log(histories);
 
       const kwIndex = histories.findIndex(v => v===keyword)
-      console.log(kwIndex);
       if (kwIndex !== -1) {
         histories.splice(kwIndex, 1)
         // 若之前搜索过该kw，则先删再加

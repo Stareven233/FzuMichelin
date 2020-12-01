@@ -3,6 +3,7 @@
 // const app = getApp()
 
 import { request } from '../../utils/util'
+import { showToast } from '../../utils/asyncWx'
 
 Page({
   data: {
@@ -93,6 +94,11 @@ Page({
 
     let res = await request({ url: '/dish/recommend', method: 'POST', data })
     let dishes = res.data || []
+
+    if(!dishes.length) {
+      await showToast({title: "没有更多菜品了"})
+      return
+    }
 
     dishes.map(function(v) {
       v.tastes = v.favor===null ? [] : v.favor.split(',')
