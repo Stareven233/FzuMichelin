@@ -4,13 +4,15 @@ import { request } from '../../utils/util'
 
 Page({
   data: {
-    dishes: []
+    dishes: [],
+    query: "",
   },
 
   onLoad: async function (options) {
     const { kw, favor } = options
     let url = ''
     let data = {}
+
     if(kw) {
       url = '/dish/search'
       data = { word: kw, page: 0 }
@@ -32,9 +34,10 @@ Page({
       v.starNum = Math.round(v.score)
     })
     this.setData({
-      dishes
+      dishes,
       // dishes: this.data.dishes.concat(dishes)
       // todo 下拉加载新数据
+      query: kw || favor,
     })
   },
   

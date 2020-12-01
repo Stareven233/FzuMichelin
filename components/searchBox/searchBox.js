@@ -4,7 +4,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    placeholder: {
+      type: String,
+      value: "今天吃什么...",
+    },
+    value: {
+      type: String,
+      value: "",
+    }
   },
 
   /**
@@ -32,7 +39,14 @@ Component({
       
       let keyword = e.detail.value
       let histories = wx.getStorageSync('histories') || []
-      // 最好先找找有无该kw，有的话先删再加
+      console.log(histories);
+
+      const kwIndex = histories.findIndex(v => v===keyword)
+      console.log(kwIndex);
+      if (kwIndex !== -1) {
+        histories.splice(kwIndex, 1)
+        // 若之前搜索过该kw，则先删再加
+      }
       histories.push(keyword)
       wx.setStorageSync('histories', histories)
       wx.navigateTo({

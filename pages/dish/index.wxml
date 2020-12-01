@@ -1,5 +1,5 @@
 <!--pages/dish/index.wxml-->
-<searchBox></searchBox>
+<searchBox placeholder="{{query}}" value="{{query}}"></searchBox>
 
 <!-- <view class="dish_wrap" wx:for="{{dishes}}" wx:key="id"> -->
 <view class="dish_wrap" bindtap="handleDishTap" wx:for="{{dishes}}" wx:key="id" data-dish-id="{{item.id}}">

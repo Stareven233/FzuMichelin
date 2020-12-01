@@ -1,5 +1,5 @@
 <!--pages/search/index.wxml-->
-<searchBox></searchBox>
+<searchBox placeholder="{{recDishName}}"></searchBox>
 
 <view class="menu_wrap">
   <view class="menu_header">

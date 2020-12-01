@@ -2,5 +2,8 @@
   "usingComponents": {
     "searchBox": "../../components/searchBox/searchBox"
   },
-  "navigationBarTitleText": "菜品搜索"
+  "onReachBottomDistance": 300,
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "backgroundColor": "#f38763"
 }
