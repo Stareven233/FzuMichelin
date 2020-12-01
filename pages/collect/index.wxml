@@ -1,6 +1,6 @@
 <!--pages/collect/index.wxml-->
 
-<view class="dish_wrap" bindtap="handleDishTap" wx:for="{{dishes}}" wx:key="id" data-dish-id="{{item.id}}">
+<view class="dish_wrap" bindtap="handleDishTap" wx:for="{{dishes}}" wx:key="id" data-dish-id="{{item.dishid}}">
   <view class="dish_img_wrap">
     <image class="dish_img" src="{{item.smallpic}}" mode="aspectFill"></image>
   </view>
@@ -10,7 +10,7 @@
       <text class="dish_name">{{item.dishname}}</text>
       <text 
       class="dish_collect active iconfont icon-shoucang1"
-      bindtap="handleCollect"
+      catchtap="handleCollect"
       data-id="{{item.id}}"
       data-idx="{{index}}"
       >

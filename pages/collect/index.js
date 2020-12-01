@@ -7,7 +7,8 @@ Page({
     dishes: []
   },
 
-  onLoad: async function (options) {
+  // 本来用的是onLoad，但onShow才能保证进入详情页取消收藏后退回来能看到对应菜品消失
+  async onShow(options) {
     const userInfo = wx.getStorageSync('userInfo') || {}
     const url = `/user/getcollection?uid=${userInfo.uid}`
 

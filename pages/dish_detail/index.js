@@ -45,7 +45,7 @@ Page({
     // 查询该菜品是否已收藏
     url = '/user/iscollected'
     res = await request({ url, data: this.data.dishUserId, method: 'POST' })
-    if(typeof res.data === 'number') {
+    if(typeof res.data === 'number' && res.data !== -1) {
       this.setData({ collectId: res.data })
     }
 
