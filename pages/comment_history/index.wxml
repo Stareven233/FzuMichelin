@@ -28,10 +28,17 @@
 
     <view class="comment_info2">
       <view class="comment_date">{{item.time}}</view>
-      <view class="like">
+
+      <!-- <view class="like">
         <text class="iconfont icon-dianzan"></text>
         <text>{{likeNum}}</text>
-      </view>
+      </view> -->
+
+      <navigator url="/pages/dish_detail/index?dishId={{item.dishid}}" open-type="navigate" class="comment_dish">
+        <mp-icon icon="link" color="#50a777" size="{{20}}"></mp-icon>
+        <text>对应菜品</text>
+      </navigator>
+
     </view>
 
   </view>

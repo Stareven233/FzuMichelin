@@ -13,6 +13,13 @@ Page({
     this.setData({userInfo})
   },
 
+  async onShow() {
+    let { userInfo } = this.data
+    const res = await request({ url: `/user/integral?uid=${userInfo.uid}`, method: 'POST' })
+    userInfo.credit = res.data || 0
+    this.setData({ userInfo })
+  },
+
   handleGetUserInfo: async function (e) {
     // 登录
     const { code } = await login()
