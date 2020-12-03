@@ -9,13 +9,18 @@
   justify-content: space-between;
   align-items: center;
 }
+.comment_box .comment_info .comment_user_info {
+  display: flex;
+  align-items: center;
+}
 .comment_box .comment_info .comment_user_info .user_avatar {
   width: 60rpx;
   height: 60rpx;
   border-radius: 50%;
 }
-.comment_box .comment_info .comment_user_info text {
-  color: #ee6d18;
+.comment_box .comment_info .comment_user_info .user_name {
+  margin-left: 20rpx;
+  color: var(--themeColor);
 }
 .comment_box .comment_info .comment_score {
   display: flex;

@@ -4,8 +4,8 @@
   <view class="comment_info">
 
     <view class="comment_user_info">
-      <!-- <image class="user_avatar" src="{{}}" mode="aspectFill"></image> -->
-      <text>{{item.username}}</text>
+      <image class="user_avatar" src="{{item.headurl}}" mode="aspectFill"></image>
+      <text class="user_name">{{item.username}}</text>
     </view>
 
     <view class="comment_score">
