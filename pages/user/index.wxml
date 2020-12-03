@@ -23,7 +23,7 @@
       <text>赞过</text>
     </navigator> -->
 
-    <navigator class="feedback_wrap menu_item" url="/pages/comment_history/index">
+    <navigator class="comment_history_wrap menu_item" url="/pages/comment_history/index">
       <text class="iconfont icon-lishijilu"></text>
       <text>历史评论</text>
     </navigator>
@@ -32,5 +32,10 @@
       <text class="iconfont icon-dianhuazhengzaibohao"></text>
       <text>联系我们</text>
       <button open-type="feedback" class="feedback_btn">联系我们</button>
+    </navigator>
+
+    <navigator class="logout_wrap menu_item" bindtap="handleLogout">
+      <text class="iconfont icon-dingbudaohang-zhangh"></text>
+      <text>注销登录</text>
     </navigator>
   </view>

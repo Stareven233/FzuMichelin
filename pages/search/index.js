@@ -19,4 +19,12 @@ Page({
     // 本该传递个点击事件，不过子组件只需要里面一个值，就传个一般对象就好了...
   },
 
+  handleClearHistory(e) {
+    console.log(e)
+    wx.removeStorage({
+      key: 'histories',
+      success: () => this.setData({ histories: [] })
+    })
+  },
+
 })

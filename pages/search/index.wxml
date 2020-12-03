@@ -5,6 +5,7 @@
   <view class="menu_header">
     <text class="iconfont icon-shoucang"></text>
     <text>历史搜索</text>
+    <text class="iconfont icon-act_qingkong clear_history" bindtap="handleClearHistory"></text>
   </view>
   <view class="menu_list">
     <view bindtap="handleMenuClick" data-kw="{{item}}" class="menu_item" wx:for="{{histories}}" wx:key="*this">{{item}}</view>

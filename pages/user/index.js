@@ -15,12 +15,15 @@ Page({
 
   async onShow() {
     let { userInfo } = this.data
+    if(!userInfo.uid) {
+      return
+    }
     const res = await request({ url: `/user/integral?uid=${userInfo.uid}`, method: 'POST' })
     userInfo.credit = res.data || 0
     this.setData({ userInfo })
   },
 
-  handleGetUserInfo: async function (e) {
+  async handleGetUserInfo(e) {
     // 登录
     const { code } = await login()
     // {errMsg: "login:ok", code: "053Xj20w3AOGjV23Zq2w3d67w74Xj20A"}
@@ -41,4 +44,10 @@ Page({
     wx.setStorageSync('userInfo', userInfo)
     this.setData({userInfo})
   },
+
+  handleLogout() {
+    wx.clearStorage();
+    this.setData({ userInfo: {} })
+  },
+
 })
