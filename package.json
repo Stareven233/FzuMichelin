@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "miniprogram-simulate": "^1.2.8"
+  },
+
+  "type": "module",
+
+  "scripts": {
+    "test": "jest"
+  },
+
+  "jest": {
+    "moduleFileExtensions": ["js", "ts"],
+    "testMatch": ["<rootDir>/test/*.test.{js,ts}"],
+    "testEnvironment": "jsdom",
+    "snapshotSerializers": ["miniprogram-simulate/jest-snapshot-plugin"]
+  }
+}
