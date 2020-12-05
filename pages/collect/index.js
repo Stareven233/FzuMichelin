@@ -17,6 +17,7 @@ Page({
 
     dishes.map(function(v) {
       v.tastes = v.favor===null ? [] : v.favor.split(',')
+      v.dishscore = v.dishscore && v.dishscore.toFixed(1)
       v.starNum = Math.round(v.dishscore)
     })
     this.setData({

@@ -24,7 +24,7 @@ Page({
       fileUrl: '',
       files: [],
       commentScore: 3,
-      commentText: '',
+      // commentText: '',
     })
   },
 
@@ -40,6 +40,9 @@ Page({
     let res = await request({ url, data, method: 'POST' })
     const dish = res.data || {}
     dish.tastes = !dish.favor ? [] : dish.favor.split(',')
+    // dish.score = parseFloat(a.toString().slice(0, 4))
+    // 最高5分的前提下限制2位小数
+    dish.score = dish.score && dish.score.toFixed(1)
     dish.starNum = Math.round(dish.score)
 
     // 查询该菜品是否已收藏
@@ -135,10 +138,11 @@ Page({
         console.log(result)
         await showToast({title: '评论成功'})
         this.initCommentData()
+        this.onLoad({dishId: this.data.dishUserId.dishid})
       },
       fail: async (res) => {
         await showToast({title: '评论失败，可能是没带上图片？'})
-        console.log(res)
+        console.error(res)
       },
       complete: (res) => {console.log(res)},
     })

@@ -24,7 +24,7 @@
           <!-- 下面用icon标签会导致父元素view上方留了一点空间，跟右边的评分价格无法对齐 -->
           <text class="iconfont icon-xingxing" wx:for="{{item.starNum}}" wx:key="*this"></text>
         </view>
-        <view>{{item.score}}分</view>
+        <view>{{item.dishscore}}分</view>
       </view>
       <view class="dish_price">￥{{item.dishprice}}</view>
     </view>
